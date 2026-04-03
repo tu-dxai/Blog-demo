@@ -428,7 +428,7 @@ export default function App() {
         </motion.div>
       </motion.div>
 
-      {/* QR Code Section */}
+      {/* Banking Information Section */}
       <motion.div 
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -440,49 +440,19 @@ export default function App() {
           Gửi lời chúc 💌
         </h2>
         <p className="text-pink-100/60 text-sm md:text-base mb-8 font-medium">
-          Quét mã để gửi lời chúc hoặc một chút yêu thương 🎁
+          Gửi lời chúc hoặc một chút yêu thương đến Thùy My 🎁
         </p>
 
-        <div className="relative group mx-auto w-64 h-64 mb-8">
-          <motion.div 
-            animate={{ 
-              boxShadow: ["0 0 15px rgba(236,72,153,0.3)", "0 0 30px rgba(236,72,153,0.6)", "0 0 15px rgba(236,72,153,0.3)"] 
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-            className="w-full h-full rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl bg-white p-4"
-          >
-            <img 
-              src="/assets/qr.jpeg" 
-              alt="QR Code" 
-              className="w-full h-full object-contain"
-              referrerPolicy="no-referrer"
-              onError={(e) => {
-                // Fallback to a generated QR if the VietQR image fails
-                (e.target as HTMLImageElement).src = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=Techcombank-5204077979-VOTHITHUYMY";
-              }}
-            />
-          </motion.div>
-          
-          {/* Decorative Sparkles around QR */}
-          <motion.div 
-            animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="absolute -top-4 -right-4 text-yellow-300"
-          >
-            <Sparkles size={24} />
-          </motion.div>
-        </div>
-
-        <div className="space-y-2 text-pink-100/80 font-medium">
-          <div className="bg-white/5 py-3 px-6 rounded-2xl border border-white/5">
+        <div className="space-y-3 text-pink-100/80 font-medium">
+          <div className="bg-white/5 py-4 px-6 rounded-2xl border border-white/5 transition-colors hover:bg-white/10">
             <p className="text-[10px] uppercase tracking-[0.2em] text-pink-300/50 mb-1">Ngân hàng</p>
             <p className="text-lg">Techcombank</p>
           </div>
-          <div className="bg-white/5 py-3 px-6 rounded-2xl border border-white/5">
+          <div className="bg-white/5 py-4 px-6 rounded-2xl border border-white/5 transition-colors hover:bg-white/10">
             <p className="text-[10px] uppercase tracking-[0.2em] text-pink-300/50 mb-1">Số tài khoản</p>
-            <p className="text-lg font-mono tracking-wider">5204 0779 79</p>
+            <p className="text-xl font-mono tracking-wider text-pink-200">5204 0779 79</p>
           </div>
-          <div className="bg-white/5 py-3 px-6 rounded-2xl border border-white/5">
+          <div className="bg-white/5 py-4 px-6 rounded-2xl border border-white/5 transition-colors hover:bg-white/10">
             <p className="text-[10px] uppercase tracking-[0.2em] text-pink-300/50 mb-1">Chủ tài khoản</p>
             <p className="text-lg uppercase">Võ Thị Thùy My</p>
           </div>
