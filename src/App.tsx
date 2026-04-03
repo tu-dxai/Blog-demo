@@ -6,6 +6,8 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Gift, Calendar, Clock, Sparkles, Music, Music2, X, Star, ChevronDown } from 'lucide-react';
+import avatar from './avatar.jpg';
+import qr from './qr.jpg';
 
 // Simple Confetti Implementation
 const useConfetti = () => {
@@ -345,12 +347,12 @@ export default function App() {
             <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full p-1.5 bg-gradient-to-tr from-pink-500 via-purple-500 to-indigo-500 shadow-[0_0_30px_rgba(236,72,153,0.5)]">
               <div className="w-full h-full rounded-full overflow-hidden border-4 border-white/20">
                 <img 
-                  src="/src/avatar.jpg" 
+                  src={avatar} 
                   alt="Võ Thị Thùy My" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                   onError={(e) => {
-                    // Fallback if the local file is not yet uploaded
+                    // Fallback if the local file is not yet uploaded or missing
                     (e.target as HTMLImageElement).src = "https://picsum.photos/seed/thuy-my/400/400";
                   }}
                 />
@@ -452,7 +454,7 @@ export default function App() {
             className="w-full h-full rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl bg-white p-4"
           >
             <img 
-              src="https://qr.vietqr.io/img/970407-5204077979-VOTHITHUYMY.jpg" 
+              src={qr} 
               alt="QR Code" 
               className="w-full h-full object-contain"
               referrerPolicy="no-referrer"
